@@ -8,7 +8,7 @@ Using this utility has a number of benefits over manually field creation:
 - Your consultants save time by moving customization between Environments in an automized way
 - You can greatly improve deployment process of your Project solution
 
-This utility is tested and verified for the listed platofrm versions:
+This utility is tested and verified for the listed platform versions:
 - Project Online
 - Project Server 2016
 
