@@ -1,37 +1,36 @@
-## Welcome to GitHub Pages
+## Project OnPremise/Online Enterprise Field Manager
+This repository contains utility that can be used in the following scenarios:
+- Move custom Enterprise Fields and Lookup Tables from one Project Environment to another
+- Generate C# classes with constant values for all Enterprise Fields (in development)
 
-You can use the [editor on GitHub](https://github.com/ivanov-dka/ProjectFieldManager/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Using this utility has a number of benefits over manually field creation:
+- All your Environments (Dev\Test\Production) can have absolutely identical (including Guids) customizations
+- Your consultants save time by moving customization between Environments in an automized way
+- You can greatly improve deployment process of your Project solution
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This utility is tested and verified for the listed platofrm versions:
+- Project Online
+- Project Server 2016
 
-### Markdown
+## Field Manager Options
+### Export Enterprise Fields and Lookup Tables from your Environment
+Export process is quite straightforward:
+1. Launch utility and authorize PWA site
+2. Select "Export Fields" option
+3. On the new screen select al the fields and tables that you want to export. Use double click at table header to tick\untick all rows
+4. Press "Start Export" button and select file path for saving. Later you should use this file for import to another pwa instance]
+5. If everything works fine you'll see successfull export message box
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Import exported elements into another Environment
+1. Launch utility and authorize PWA site
+2. Select "Import Fields" option and choose file that was generated during file export process
+3. On the new screen you can see all the fields and tables that were saved in the file. You can also tick the fields that are needed to be imported in the system. Use double click at table header to tick\untick all rows
+4. Press "Start Export" button 
+5. If everything works fine you'll see successfull import message box
 
-```markdown
-Syntax highlighted code block
+### Generate C# classes
+*coming soon*
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ivanov-dka/ProjectFieldManager/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Special settings
+#### Generate new Guids for imported fields
+If you delete field from your Project instance reference to it belongs in the system database, so you are not able to create this field second time. If you're facing this issue you can tick "Generate new Guids" option on the import screen in order to recreate field successfully, although the Id property will be generated randomly and will not be longer equal to the value from export-file.
